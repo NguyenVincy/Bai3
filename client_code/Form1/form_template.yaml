@@ -1,14 +1,55 @@
+properties: []
 is_package: true
-container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
+events: []
+custom_component: true
 components:
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {slot: default}
-  components: []
-- type: FlowPanel
-  properties: {}
-  name: navbar_links
-  layout_properties: {slot: nav-right}
+  components:
+  - name: label_3
+    properties: {text: Chọn thuật toán sắp xếp}
+    type: Label
+    layout_properties: {grid_position: 'BUYLZV,VBZYZX'}
+  - name: drop_down_1
+    properties:
+      items: []
+    type: DropDown
+    layout_properties: {grid_position: 'QVWMBP,DLRWSW'}
+    event_bindings: {change: drop_down_1_change}
+  - name: label_2
+    properties: {text: 'Nhập dãy số cần sắp xếp:', bold: true, background: 'theme:Primary
+        Container'}
+    type: Label
+    layout_properties: {grid_position: 'FOZCML,ODNXRJ'}
+  - name: xy_panel_1
+    properties: {height: 308}
+    type: XYPanel
+    layout_properties: {grid_position: 'DQMUIE,HVTOQT'}
+    components:
+    - name: text_box_2
+      properties: {}
+      type: TextBox
+      layout_properties: {x: 0, y: 3.546875, width: 599}
+      event_bindings: {pressed_enter: text_box_2_pressed_enter}
+    - name: button_1
+      properties: {text: Thực hiện, background: 'theme:Disabled Container'}
+      type: Button
+      layout_properties: {x: 595.3125, y: 4.734375, width: 143.2734375}
+      event_bindings: {click: button_1_click}
+    - name: label_5
+      properties: {text: 'Kết quả:'}
+      type: Label
+      layout_properties: {x: 0, y: 90.09375, width: 746}
+    - name: data_row_panel_1
+      properties: {}
+      type: DataRowPanel
+      layout_properties: {x: 0, y: 173.640625, width: 433.5}
+- name: label_1
+  properties: {text: Các thuật toán sắp xếp cơ bản}
+  type: Label
+  layout_properties: {slot: title}
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html', visible: true}
